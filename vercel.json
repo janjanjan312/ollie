@@ -1,9 +1,7 @@
 {
-  "rewrites": [
-    { "source": "/api/:path*", "destination": "http://101.43.40.196/api/:path*" },
-    { "source": "/:path*",     "destination": "http://101.43.40.196/:path*" }
-  ],
-  "headers": [
-    { "source": "/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] }
+  "version": 2,
+  "routes": [
+    { "src": "/api/(.*)", "dest": "http://101.43.40.196/api/$1" },
+    { "src": "/(.*)",     "dest": "http://101.43.40.196/$1" }
   ]
 }
